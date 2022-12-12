@@ -2,4 +2,7 @@
 
 #Requires -RunAsAdministrator
 # Shortcut cannot be removed unless run as administrator
-Remove-Item -Path "C:\Users\Public\Desktop\AnyDesk MSI.lnk" -Force
+$shortcut = "C:\Users\Public\Desktop\AnyDesk MSI.lnk"
+if (Test-Path $shortcut) {
+    Remove-Item -Path $shortcut -Force
+}

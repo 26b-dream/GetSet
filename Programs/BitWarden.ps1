@@ -1,3 +1,6 @@
 winget install Bitwarden.Bitwarden --location C:\Programs\Bitwarden
 
-Remove-Item -Path "$env:USERPROFILE\Desktop\Bitwarden.lnk" -Force
+$shortcut = "$env:USERPROFILE\Desktop\Bitwarden.lnk" 
+if (Test-Path $shortcut) {
+    Remove-Item -Path $shortcut -Force
+}
