@@ -13,5 +13,4 @@ $exe_path = "$download_folder\BattMonSetup-$version.msi"
 download $url $exe_path
 
 # Normal GUI installation has no choice on installation path
-. "$((get-item $PSScriptRoot).parent.FullName)\lib\elevated.ps1"
 msiexec /i "$exe_path" /qn /quiet
