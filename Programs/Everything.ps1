@@ -1,4 +1,5 @@
-# --location does not work
+# Installs into the wrong path
+#   winget install voidtools.Everything --location "C:\Programs\Everything"
 winget install voidtools.Everything --override "INSTALLDIR=C:\Programs\Everything /quiet"
 
 . "$((get-item $PSScriptRoot).parent.FullName)\lib\delete_shortcut.ps1"
