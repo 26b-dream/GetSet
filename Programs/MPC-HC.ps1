@@ -1,0 +1,1 @@
+winget install clsid2.mpc-hc --location "C:\Programs\MPC-HC"
