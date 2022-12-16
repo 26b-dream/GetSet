@@ -1,0 +1,1 @@
+winget install SumatraPDF.SumatraPDF --location "C:\Programs\Sumatra PDF"
