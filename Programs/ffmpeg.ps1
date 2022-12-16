@@ -1,7 +1,7 @@
 # Not available via winget
 # choco uses a zip installer
 #   Extracts to C:\ProgramData\chocolatey\lib\ffmpeg\tools\ffmpeg
-choco install ffmpeg --install-args "/DIR=C:\Programs\AutoVer" -y
+choco install ffmpeg -y
 
 $install_path = "C:\Programs\ffmpeg"
 
