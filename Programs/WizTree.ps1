@@ -1,0 +1,1 @@
+winget install --id AntibodySoftware.WizTree --location "C:\Programs\WizTree"
