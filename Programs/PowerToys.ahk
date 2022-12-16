@@ -3,6 +3,9 @@
 ;   winget install Microsoft.PowerToys --override "TARGETDIR=C:\Programs\TARGETDIR"
 ;   winget install Microsoft.PowerToys --override "INSTALLLOCATION=C:\Programs\INSTALLLOCATION"
 ;   winget install Microsoft.PowerToys --override "INSTALLDIR=C:\Programs\INSTALLDIR"
+;   winget install Microsoft.PowerToys --override "INSTALLPATH=C:\Programs\INSTALLPATH"
+;   winget install Microsoft.PowerToys --override "INSTALLFOLDER=C:\Programs\INSTALLFOLDER"
+;   winget install Microsoft.PowerToys --override "APPDIR=C:\Programs\APPDIR"
 
 ; Start installer
 Run, winget install Microsoft.PowerToys -i
