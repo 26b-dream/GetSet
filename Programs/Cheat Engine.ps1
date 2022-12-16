@@ -1,6 +1,6 @@
 # Not available via winget
 # Not available via choco
-# Avoid newer versions of AutoHotkey
+# Avoid newer versions of Cheat Engine
 #   Installers after 7.0 will automatically install adware so juse use version 7.0
 $name = "Cheat Engine"
 $version = "7.0"
