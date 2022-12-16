@@ -18,6 +18,5 @@ Copy-Item "C:\ProgramData\chocolatey\lib\ffmpeg\tools\ffmpeg" $install_path -Rec
 choco uninstall ffmpeg -y
 
 . "$((get-item $PSScriptRoot).parent.FullName)\lib\add_to_path.ps1"
-
 add_to_path "$install_path\bin\ffmpeg.exe"
 add_to_path "$install_path\bin\ffprobe.exe"
