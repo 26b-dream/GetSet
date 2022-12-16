@@ -1,5 +1,42 @@
 # For some reason /f doesn't work sometimes so ECHO Y is used in this cases
 
+# Use old context menu
+# Source: https://answers.microsoft.com/en-us/windows/forum/all/restore-legacy-right-click-menu-for-file-explorer/a62e797c-eaf3-411b-aeec-e460e6e5a82a
+REG ADD "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
+# Remove Restore previous versions
+# Source: https://www.elevenforum.com/t/add-or-remove-previous-versions-from-context-menu-and-properties-in-windows-11.9391/
+REG DELETE "HKCR\AllFilesystemObjects\shellex\ContextMenuHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\CLSID\{450D8FBA-AD25-11D0-98A8-0800361B1103}\shellex\ContextMenuHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\Directory\shellex\ContextMenuHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\Drive\shellex\ContextMenuHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\AllFilesystemObjects\shellex\PropertySheetHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\CLSID\{450D8FBA-AD25-11D0-98A8-0800361B1103}\shellex\PropertySheetHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\Directory\shellex\PropertySheetHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCR\Drive\shellex\PropertySheetHandlers\{596AB062-B4D2-4215-9F74-E9109B0A8153}" /f
+REG DELETE "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "NoPreviousVersionsPage" /f
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /f
+REG DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "NoPreviousVersionsPage" /f
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /f
+REG DELETE "HKLM\SOFTWARE\Policies\Microsoft\PreviousVersions" /v "DisableLocalPage" /f
+REG ADD "HKLM\SOFTWARE\Policies\Microsoft\PreviousVersions" /f
+REG DELETE "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "NoPreviousVersionsPage" /f
+REG ADD "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /f
+REG DELETE "HKCU\Software\Policies\Microsoft\PreviousVersions" /v "DisableLocalPage" /f
+REG ADD "HKCU\Software\Policies\Microsoft\PreviousVersions" /f
+
+# Remove Include in library
+# Source: https://www.tenforums.com/tutorials/37130-add-remove-include-library-context-menu-windows-10-a.html
+Reg.exe delete "HKCR\Folder\ShellEx\ContextMenuHandlers\Library Location" /f
+Reg.exe delete "HKLM\SOFTWARE\Classes\Folder\ShellEx\ContextMenuHandlers\Library Location" /f
+
+# Remove Pin to Quick Access
+# Source: https://www.elevenforum.com/t/add-or-remove-pin-to-quick-access-context-menu-in-windows-11.2807/
+REG DELETE "HKCR\AllFilesystemObjects\shell\pintohome" /f
+REG DELETE "HKCR\Drive\shell\pintohome" /f
+REG DELETE "HKCR\Folder\shell\pintohome" /f
+REG DELETE "HKCR\Network\shell\pintohome" /f
+
 # Remove "Give access to"
 # Source: https://www.tenforums.com/tutorials/46888-give-access-context-menu-add-remove-windows-10-a.html
 REG DELETE "HKCR\*\shellex\ContextMenuHandlers\Sharing" /f
