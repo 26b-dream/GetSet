@@ -12,3 +12,6 @@ download $url $exe_path
 # TODO: Is this switch actually needed?
 # TODO: Installation works, so maybe just don't touch it
 . "$exe_path" /SILENT
+
+. "$((get-item $PSScriptRoot).parent.FullName)\lib\delete_shortcut.ps1"
+delete_shortcut "Launch Monitor Driver Installer"
