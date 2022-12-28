@@ -1,1 +1,0 @@
-winget install FontForge.FontForge --location "C:\Programs\FontForge"

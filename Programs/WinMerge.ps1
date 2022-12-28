@@ -1,1 +1,0 @@
-winget install --id WinMerge.WinMerge --location "C:\Programs\WinMerge"

@@ -1,1 +1,0 @@
-winget install GIMP.GIMP --location "C:\Programs\GIMP"
